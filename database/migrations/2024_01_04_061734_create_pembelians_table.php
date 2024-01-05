@@ -12,13 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pembelians', function (Blueprint $table) {
-            $table->increments('id_pembelian');
-            $table->integer('id_supplier');
+            $table->id('id_pembelian');
+            $table->unsignedBigInteger('id_supplier');
             $table->integer('total_item');
             $table->integer('total_harga');
             $table->integer('diskon')->default(0);
             $table->integer('bayar')->default(0);
             $table->timestamps();
+            
+            $table->foreign('id_supplier')->references('id_supplier')->on('suppliers')->cascadeOnDelete();
+
         });
     }
 
