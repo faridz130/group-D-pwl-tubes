@@ -9,5 +9,7 @@ class Supplier extends Model
 {
     use HasFactory;
 
-
+    protected $table = 'suppliers';
+    protected $primaryKey = 'id_supplier';
+    protected $guarded = [];
 }
