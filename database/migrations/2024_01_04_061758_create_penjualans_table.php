@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('penjualans', function (Blueprint $table) {
             $table->id('id_penjualan');
-            $table->unsignedBigInteger('id_member');
+            $table->unsignedBigInteger('id_member')->nullable();
             $table->integer('total_item');
             $table->integer('total_harga');
             $table->integer('diskon')->default(0);
