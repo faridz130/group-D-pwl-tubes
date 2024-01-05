@@ -12,14 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('team_user', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('team_id');
-            $table->foreignId('user_id');
+            $table->id('id_team_user');
+            $table->unsignedBigInteger('id_teams')->index();
+            $table->foreignId('user_id')->index()->constrained();
             $table->string('role')->nullable();
             $table->timestamps();
-
-            $table->unique(['team_id', 'user_id']);
+            
+            $table->unique(['id_teams', 'user_id']);
+        
+            $table->foreign('id_teams')->references('id_teams')->on('teams')->cascadeOnDelete();
         });
+        
     }
 
     /**
