@@ -21,10 +21,10 @@ return new class extends Migration
             $table->integer('diterima')->default(0);
             $table->foreignId('user_id')->index()->constrained();
             $table->timestamps();
-            
-            $table->foreign('id_member')->references('id_member')->on('members')->cascadeOnDelete();
+
+            $table->foreign('id_member')->references('id_member')->on('members')->onDelete('restrict')->onUpdate('restrict');
         });
-        
+
     }
 
     /**

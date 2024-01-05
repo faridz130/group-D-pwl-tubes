@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('jumlah');
             $table->integer('subtotal');
             $table->timestamps();
-            
-            $table->foreign('id_pembelian')->references('id_pembelian')->on('pembelians')->cascadeOnDelete();
+
+            $table->foreign('id_pembelian')->references('id_pembelian')->on('pembelians')->onDelete('restrict')->onUpdate('restrict');
 
 
         });

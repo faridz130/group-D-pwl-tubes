@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('diskon')->default(0);
             $table->integer('bayar')->default(0);
             $table->timestamps();
-            
-            $table->foreign('id_supplier')->references('id_supplier')->on('suppliers')->cascadeOnDelete();
+
+            $table->foreign('id_supplier')->references('id_supplier')->on('suppliers')->onDelete('restrict')->onUpdate('restrict');
 
         });
     }

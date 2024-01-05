@@ -20,9 +20,9 @@ return new class extends Migration
             $table->integer('diskon')->default(0);
             $table->integer('subtotal');
             $table->timestamps();
-            
-            $table->foreign('id_penjualan')->references('id_penjualan')->on('penjualans')->cascadeOnDelete();
-            $table->foreign('id_produk')->references('id_produk')->on('produks')->cascadeOnDelete();
+
+            $table->foreign('id_penjualan')->references('id_penjualan')->on('penjualans')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('id_produk')->references('id_produk')->on('produks')->onDelete('restrict')->onUpdate('restrict');
 
         });
     }
