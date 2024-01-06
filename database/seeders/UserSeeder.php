@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
                 'email' => 'kasir1@gmail.com',
                 'password' => bcrypt('kasir123'),
                 'foto' => '/img/user.jpg',
-                'level' => 2
+                'level' => 5
             ]
         );
 

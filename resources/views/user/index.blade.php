@@ -16,15 +16,18 @@
             <div class="box-header with-border">
                 <button onclick="addForm('{{ route('user.store') }}')" class="btn btn-success btn-xs btn-flat"><i class="fa fa-plus-circle"></i> Tambah</button>
             </div>
+           
+
             <div class="box-body table-responsive">
-                <table class="table table-stiped table-bordered">
-                    <thead>
-                        <th width="5%">No</th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th width="15%"><i class="fa fa-cog"></i></th>
-                    </thead>
-                </table>
+            <table class="table table-stiped table-bordered">
+                <thead>
+                    <th width="5%">No</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Level</th>
+                    <th width="15%"><i class="fa fa-cog"></i></th>
+                </thead>
+            </table>
             </div>
         </div>
     </div>
@@ -50,6 +53,7 @@
                 {data: 'DT_RowIndex', searchable: false, sortable: false},
                 {data: 'name'},
                 {data: 'email'},
+                {data: 'level'},
                 {data: 'aksi', searchable: false, sortable: false},
             ]
         });
