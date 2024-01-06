@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('pembelian_details', function (Blueprint $table) {
             $table->id('id_pembelian_detail');
             $table->unsignedBigInteger('id_pembelian');
-            $table->integer('id_produk');
+            $table->unsignedBigInteger('id_produk');
             $table->integer('harga_beli');
             $table->integer('jumlah');
             $table->integer('subtotal');
             $table->timestamps();
 
             $table->foreign('id_pembelian')->references('id_pembelian')->on('pembelians')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('id_produk')->references('id_produk')->on('produks')->onDelete('restrict')->onUpdate('restrict');
 
 
         });
