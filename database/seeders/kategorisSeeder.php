@@ -16,9 +16,6 @@ class kategorisSeeder extends Seeder
         DB::table('kategoris')->insert([
             'nama_kategori' => "Minuman",
             
-        ],[
-            'nama_kategori' => "Makanan",
-            
         ]);
     }
 }
