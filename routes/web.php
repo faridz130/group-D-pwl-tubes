@@ -12,6 +12,8 @@ use App\Http\Controllers\{
     SettingController,
     PenjualanController,
     PenjualanDetailController,
+    LaporanController,
+    UserController,
 };
 
 /*
@@ -81,5 +83,14 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/transaksi/{id}/data', [PenjualanDetailController::class, 'data'])->name('transaksi.data');
     Route::get('/transaksi/loadform/{diskon}/{total}/{diterima}', [PenjualanDetailController::class, 'loadForm'])->name('transaksi.load_form');
     Route::resource('/transaksi', PenjualanDetailController::class)->except('create', 'show', 'edit');
+
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('/laporan/data/{awal}/{akhir}', [LaporanController::class, 'data'])->name('laporan.data');
+    Route::get('/laporan/pdf/{awal}/{akhir}', [LaporanController::class, 'exportPDF'])->name('laporan.export_pdf');
+
+    Route::get('/user/data', [UserController::class, 'data'])->name('user.data');
+    Route::get('/profil', [UserController::class, 'profil'])->name('user.profil');
+    Route::post('/profil', [UserController::class, 'updateProfil'])->name('user.update_profil');
+    Route::resource('/user', UserController::class);
 
 });
