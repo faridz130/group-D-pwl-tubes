@@ -31,15 +31,15 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Manager 1',
-                'email' => 'Manager1@gmail.com',
-                'password' => bcrypt('Manager123'),
+                'email' => 'manager1@gmail.com',
+                'password' => bcrypt('manager123'),
                 'foto' => '/img/user.jpg',
                 'level' => 2
             ],
             [
                 'name' => 'Supervisor 1',
-                'email' => 'Supervisor1@gmail.com',
-                'password' => bcrypt('Supervisor123'),
+                'email' => 'supervisor1@gmail.com',
+                'password' => bcrypt('supervisor123'),
                 'foto' => '/img/user.jpg',
                 'level' => 3
             ],
