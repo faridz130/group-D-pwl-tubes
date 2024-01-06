@@ -79,7 +79,7 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="{{ route('setting.index')}}">
                 <i class="fa fa-cog"></i> <span>PENGATURAN</span>
             </a>
         </li>

@@ -9,6 +9,7 @@ use App\Http\Controllers\{
     PengeluaranController,
     PembelianController,
     PembelianDetailController,
+    SettingController,
 };
 
 /*
@@ -60,5 +61,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/pembelian_detail/{id}/data', [PembelianDetailController::class, 'data'])->name('pembelian_detail.data');
     Route::get('/pembelian_detail/loadform/{diskon}/{total}', [PembelianDetailController::class, 'loadForm'])->name('pembelian_detail.load_form');
     Route::resource('/pembelian_detail', PembelianDetailController::class)->except('create', 'show', 'edit');
+
+    Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
+    Route::get('/setting/first', [SettingController::class, 'show'])->name('setting.show');
+    Route::post('/setting', [SettingController::class, 'update'])->name('setting.update');
 
 });
