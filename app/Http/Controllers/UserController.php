@@ -152,6 +152,7 @@ class UserController extends Controller
 
         $user->update();
 
+        return redirect()->route('user.index');
         return response()->json($user, 200);
     }
 }
