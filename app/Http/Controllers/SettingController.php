@@ -44,6 +44,7 @@ class SettingController extends Controller
 
         $setting->update();
 
+        return redirect()->route('setting.index');
         return response()->json('Data berhasil disimpan', 200);
     }
 }

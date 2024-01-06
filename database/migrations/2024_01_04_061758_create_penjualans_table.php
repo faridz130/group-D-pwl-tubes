@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('diskon')->default(0);
             $table->integer('bayar')->default(0);
             $table->integer('diterima')->default(0);
-            $table->foreignId('user_id')->index()->constrained();
+            $table->integer('id_user');
             $table->timestamps();
 
             $table->foreign('id_member')->references('id_member')->on('members')->onDelete('restrict')->onUpdate('restrict');
