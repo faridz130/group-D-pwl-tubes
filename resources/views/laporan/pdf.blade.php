@@ -6,17 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laporan Pendapatan</title>
 
-    <link rel="stylesheet" href="{{ asset('/AdminLTE-2/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h3, h4 {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
 </head>
 <body>
-    <h3 class="text-center">Laporan Pendapatan</h3>
-    <h4 class="text-center">
+    <h3>Laporan Pendapatan</h3>
+    <h4>
         Tanggal {{ tanggal_indonesia($awal, false) }}
         s/d
         Tanggal {{ tanggal_indonesia($akhir, false) }}
     </h4>
 
-    <table class="table table-striped">
+    <table>
         <thead>
             <tr>
                 <th width="5%">No</th>
