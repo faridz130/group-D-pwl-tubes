@@ -50,6 +50,7 @@ class LaporanController extends Controller
             $row['pendapatan'] = format_uang($pendapatan);
 
             $data[] = $row;
+            set_time_limit(0);
         }
 
         $data[] = [
@@ -67,7 +68,6 @@ class LaporanController extends Controller
     public function data($awal, $akhir)
     {
         $data = $this->getData($awal, $akhir);
-
         return datatables()
             ->of($data)
             ->make(true);
