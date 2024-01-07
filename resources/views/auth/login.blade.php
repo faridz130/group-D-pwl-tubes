@@ -7,9 +7,10 @@
     <div class="login-box-body">
         <div class="login-logo">
             <a href="{{ url('/') }}">
-                <img src="{{ url($setting->path_logo) }}" alt="logo.png" width="100">
+                <img src="{{ asset('img/logoToko.png') }}" alt="logo.png" width="100">
             </a>
         </div>
+
 
         <form action="{{ route('login') }}" method="post" class="form-login">
             @csrf
